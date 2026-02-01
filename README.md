@@ -10,4 +10,4 @@
 
 ## Bestückplan
 
-[BOM](http://htmlpreview.github.io/?https://github.com/GerritMihu/Schnupperblinki_USB-C/bom/Blinki mit USB-C-ibom.html)
+![BOM]("http://htmlpreview.github.io/?https://github.com/GerritMihu/Schnupperblinki_USB-C/bom/Blinki mit USB-C-ibom.html")
