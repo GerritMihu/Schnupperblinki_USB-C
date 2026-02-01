@@ -7,6 +7,13 @@
 		(legacy_teardrops no)
 	)
 	(paper "A4")
+	(title_block
+		(title "Blinki mit USB-C")
+		(date "2026-02-01")
+		(rev "1")
+		(company "HTL-Steyr")
+		(comment 1 "Gerrit Mitterhuemer")
+	)
 	(layers
 		(0 "F.Cu" signal)
 		(2 "B.Cu" signal)
