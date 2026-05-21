@@ -22,3 +22,10 @@
 
 ## Bestückplan
 [BOM (HTML-Preview)](https://htmlpreview.github.io/?https://github.com/GerritMihu/Schnupperblinki_USB-C/blob/main/bom/Blinki%20mit%20USB-C-ibom.html)
+
+## Documentation exports
+
+- PCB PDF: [Dok/Dok_PCB.pdf](./Dok/Dok_PCB.pdf)
+- Schematic PDF: [Dok/Dok_SCH.pdf](./Dok/Dok_SCH.pdf)
+- Schematic SVG: [Dok/Dok_SCH.svg](./Dok/Dok_SCH.svg)
+
