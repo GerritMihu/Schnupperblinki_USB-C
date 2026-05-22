@@ -64,7 +64,7 @@ flatpak run --command=kicad-cli org.kicad.KiCad pcb render \
     -o "$OUTPUT_DIR_PIC/3d_isometric.png" \
     --width 1600 \
     --height 900 \
-    --rotate "-45,0,45" \
+    --rotate "45,0,45" \
     --quality high \
     "$PCB_FILE"
 echo "  -> $OUTPUT_DIR_PIC/3d_isometric.png"

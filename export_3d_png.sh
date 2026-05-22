@@ -49,7 +49,7 @@ echo "  -> $OUTDIR/3d_bottom.png"
 echo ""
 
 echo "Rendering isometric view..."
-$KICAD_CLI pcb render -o "$OUTDIR/3d_isometric.png" --width $WIDTH --height $HEIGHT --rotate "-45,0,45" --quality $QUALITY "$BOARD"
+$KICAD_CLI pcb render -o "$OUTDIR/3d_isometric.png" --width $WIDTH --height $HEIGHT --rotate "45,0,45" --quality $QUALITY "$BOARD"
 echo "  -> $OUTDIR/3d_isometric.png"
 echo ""
 

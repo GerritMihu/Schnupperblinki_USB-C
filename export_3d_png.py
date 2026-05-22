@@ -16,7 +16,7 @@ import sys
 DEFAULT_VIEWS = {
     'top': {'side': 'top', 'rotate': '', 'filename': '3d_top.png'},
     'bottom': {'side': 'bottom', 'rotate': '', 'filename': '3d_bottom.png'},
-    'isometric': {'side': 'top', 'rotate': '-45,0,45', 'filename': '3d_isometric.png'},
+    'isometric': {'side': 'top', 'rotate': '45,0,45', 'filename': '3d_isometric.png'},
 }
 
 

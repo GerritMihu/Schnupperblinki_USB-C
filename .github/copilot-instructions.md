@@ -38,7 +38,7 @@ Notes: scripts call KiCad's CLI via `flatpak run --command=kicad-cli org.kicad.K
   - 3D PNG -> `pic/` (3d_top.png, 3d_bottom.png, 3d_isometric.png)
 - The scripts default to calling KiCad via Flatpak. To run against a system install, edit `KICAD_CLIPATH` in the Python scripts or replace the flatpak prefix in shell scripts.
 - DXF export settings used consistently: units = mm, `--drill-shape-opt 1`, and `--mode-multi` to emit separate files per layer. When updating export logic, preserve these flags unless intentionally changing output semantics.
-- 3D render settings: width 1600, height 900, quality = high, isometric rotate `-45,0,45`.
+- 3D render settings: width 1600, height 900, quality = high, isometric rotate `45,0,45`. 
 - Filenames contain spaces and an umlaut ("Blinki mit USB-C"). Scripts quote variables/arguments correctly; be cautious when editing to preserve quoting.
 
 ## Files to consult when changing exports
