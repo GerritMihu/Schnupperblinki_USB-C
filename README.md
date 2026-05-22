@@ -17,6 +17,22 @@
 
 - DXF (Layer-Exports): [dxf/](./dxf/)
 
+### xTool Laser F2 Ultra — empfohlenes Vorgehensweise
+
+- Empfohlen: zwei DXF-Dateien im dxf/-Ordner erzeugen:
+  - Edge.Cuts → Schneidekante (äußerste Linie) — zum Schneiden
+  - F.Cu     → Gravur (restliche Vektoren, kombiniert) 
+
+Beispielbefehle:
+
+# F.Cu (Gravur)
+KICAD_CLI="kicad-cli" ./export_fcu_dxf.sh "Blinki mit USB-C.kicad_pcb" dxf
+
+# Edge.Cuts (Schneiden)
+flatpak run --command=kicad-cli org.kicad.KiCad pcb export dxf --layers Edge.Cuts --output-units mm --mode-single -o dxf "Blinki mit USB-C.kicad_pcb"
+
+Hinweis: Die äußerste Linie (Edge.Cuts) ist die Schneidekante; der Rest wird als kombinierter Vektor für die Gravur genutzt. Falls Pfade gemerged oder Text in Konturen umgewandelt werden müssen, kann ein Zusatzskript oder Inkscape dafür genutzt; bei Bedarf hinzufügen.
+
 
 
 
