@@ -1,0 +1,50 @@
+name: KiCad Export
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '**.kicad_pcb'
+      - '**.kicad_sch'
+      - '**.kicad_pro'
+      - '**.py'
+      - '**.sh'
+  workflow_dispatch:
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    container:
+      image: kicad/kicad:nightly
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install dependencies
+        run: |
+          apt-get update
+          apt-get install -y git python3
+
+      - name: Run exports
+        run: |
+          # Use kicad-cli directly in the container
+          python3 export_all.py --kicad-cli kicad-cli
+        env:
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_REF_NAME: ${{ github.ref_name }}
+
+      - name: Commit and push changes
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add dxf/ pic/ Dok/ README.md
+          if [ -n "$(git status --porcelain)" ]; then
+            git commit -m "Automated export update [skip ci]"
+            git push
+          else
+            echo "No changes to commit"
+          fi
+        shell: bash

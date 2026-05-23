@@ -73,3 +73,15 @@ echo ""
 echo "✓ All 3D renders completed"
 echo "Exported PNG files:"
 ls -lh "$OUTPUT_DIR_PIC" || true
+
+echo ""
+echo "Updating README.md with preview links..."
+if [ -f "./update_readme.py" ]; then
+    python3 ./update_readme.py
+else
+    echo "Warning: update_readme.py not found"
+fi
+
+echo "============================================================"
+echo "Export process finished"
+echo "============================================================"

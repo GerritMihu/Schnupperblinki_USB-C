@@ -84,7 +84,16 @@ def main():
     else:
         print('export_docs.py not found; skipping documentation exports')
 
-    if ok_dxf and ok_3d and ok_docs:
+    # Update README with preview links
+    update_readme_py = find_script('update_readme.py')
+    ok_readme = True
+    if update_readme_py:
+        cmd = base_cmd + [update_readme_py]
+        ok_readme = run_subcommand(cmd)
+    else:
+        print('update_readme.py not found; skipping README update')
+
+    if ok_dxf and ok_3d and ok_docs and ok_readme:
         print('\n✓ All exports completed successfully!')
         return 0
     print('\n✗ Some exports failed!')
